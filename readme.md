@@ -1,6 +1,6 @@
 # ESP32 Roku Remote
 
-Uses the [Roku External Control Protocol](https://developer.roku.com/docs/developer-program/debugging/external-control-api.md) (ECP) to issue commands over WiFi using an ESP32
+Uses the [Roku External Control Protocol](https://developer.roku.com/docs/developer-program/debugging/external-control-api.md) (ECP) to issue commands over WiFi using an ESP32.
 
 ## WiFi Credentials
 
@@ -21,3 +21,5 @@ The NodeRED flow is included in this repo. Just import `roku-mqtt-remote-NodeRED
 ![NodeRED flow](images/NodeRED-flow.png)
 
 The `https request` node is where the base URL is stored. This needs to be changed to match the IP address of the Roku device you are trying to control.
+
+ This was based on the [Roku Remote example flow](https://flows.nodered.org/flow/512ceba64ac94614558e4802c19c77aa) shared by ampherion.
