@@ -1,0 +1,92 @@
+[
+    {
+        "id": "b6ab881f.302b7",
+        "type": "tab",
+        "label": "Roku MQTT Connector",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "90cc0a88.e95ad8",
+        "type": "mqtt in",
+        "z": "b6ab881f.302b7",
+        "name": "MQTT Roku Remote (laundry room)",
+        "topic": "roku/laundryroom/keypress",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "51236801.56dee8",
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "d0f1f99c.b0b02",
+                "29ec5f59.7a76b8"
+            ]
+        ]
+    },
+    {
+        "id": "29ec5f59.7a76b8",
+        "type": "debug",
+        "z": "b6ab881f.302b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 630,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d0f1f99c.b0b02",
+        "type": "http request",
+        "z": "b6ab881f.302b7",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.1.144:8060/keypress/{{payload}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 630,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e289b0b2.0426",
+        "type": "comment",
+        "z": "b6ab881f.302b7",
+        "name": "Set the Roku IP address in the http request node",
+        "info": "",
+        "x": 520,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "51236801.56dee8",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "192.168.1.135",
+        "port": "1883",
+        "clientid": "nelson",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
